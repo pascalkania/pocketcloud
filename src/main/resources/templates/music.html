@@ -12,12 +12,16 @@
     <p class="lead">latest music from <a th:href="@{http://laut.fm/deepahouse}">http://laut.fm/deepahouse</a></p>
     <table class="table table-striped scrollable-table">
         <tr>
-            <th>Titel</th>
-            <th>Interpret</th>
+            <th>#</th>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Youtube</th>
         </tr>
-        <tr th:each="musicelement : ${musiclist}">
-            <td th:text="${musicelement}"></td>
-            <td> TextInterpret</td>
+        <tr th:each="musicelement,iter : ${musiclist}">
+            <td th:text="${iter.count}"></td>
+            <td th:text="${musicelement.artist.name}"></td>
+            <td th:text="${musicelement.title}"></td>
+            <td><i class="fa fa-youtube-play"></i></td>
         </tr>
 
     </table>

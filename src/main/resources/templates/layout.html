@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns="http://www.w3.org/1999/html">
 <head th:fragment="htmlhead">
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -25,11 +26,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-console"></span></a>
+            <a class="navbar-brand" th:href="@{/}"><i class="fa fa-coffee"></i></a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav" sec:authorize="isAuthenticated()">
-                <li><a th:href="@{/}">Home</a></li>
                 <li><a th:href="@{/news}">News</a></li>
                 <li><a th:href="@{/articles}">Articles</a></li>
                 <li><a th:href="@{/music}">Music</a></li>
@@ -61,7 +61,7 @@
     <footer class="footer">
         <div class="container">
             <p class="text-muted">Made with <span class="glyphicon glyphicon-heart"></span> by Pascal Kania
-                <br/> <i class="fa fa-twitter"></i> @pascalkania
+                <br/> <a th:href="@{https://twitter.com/pascalkania}"><i class="fa fa-twitter"></i>@pascalkania</a>
             </p>
         </div>
     </footer>
