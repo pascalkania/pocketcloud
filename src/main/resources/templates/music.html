@@ -1,0 +1,29 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout :: htmlhead" th:with="title='MyPocketCloud | Music'"></head>
+
+<body>
+<div th:replace="layout :: navbar">(navbar)</div>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Music</h1>
+    </div>
+    <p class="lead">latest music from <a th:href="@{http://laut.fm/deepahouse}">http://laut.fm/deepahouse</a></p>
+    <table class="table table-striped scrollable-table">
+        <tr>
+            <th>Titel</th>
+            <th>Interpret</th>
+        </tr>
+        <tr th:each="musicelement : ${musiclist}">
+            <td th:text="${musicelement}"></td>
+            <td> TextInterpret</td>
+        </tr>
+
+    </table>
+</div>
+
+<div th:include="layout :: footer">(footer)</div>
+
+</body>
+</html>

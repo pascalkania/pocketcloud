@@ -10,9 +10,15 @@ body {
 
 .footer {
     text-align: center;
-    position: absolute;
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 100px;
 }
+
+.scrollable-table {
+    height: 100px !important;
+    overflow: scroll;
+}
+
+​

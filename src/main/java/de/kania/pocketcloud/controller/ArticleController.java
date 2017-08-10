@@ -11,6 +11,6 @@ public class ArticleController {
 
     @RequestMapping("/articles")
     public String handleArticlesRequest(Model model){
-        return "news";
+        return "articles";
     }
 }
