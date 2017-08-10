@@ -10,9 +10,4 @@ public class LoginController {
     public String handleLoginRequest(){
         return "login";
     }
-
-    @RequestMapping("/home")
-    public String handleIndexRequest(){
-        return "home";
-    }
 }
