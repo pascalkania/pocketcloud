@@ -21,7 +21,8 @@
             <td th:text="${iter.count}"></td>
             <td th:text="${musicelement.artist.name}"></td>
             <td th:text="${musicelement.title}"></td>
-            <td><i class="fa fa-youtube-play"></i></td>
+            <td><a th:href="@{https://www.youtube.com/results(search_query=${musicelement.title}+'+'+${musicelement.artist.name})}">
+                <i class="fa fa-youtube-play"></i></a></td>
         </tr>
 
     </table>
