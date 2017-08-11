@@ -9,6 +9,27 @@
     <div class="page-header">
         <h1>Admin</h1>
     </div>
+
+    <p class="lead">Userlist</p>
+    <table class="table table-striped scrollable-table">
+        <tr>
+            <th>Username</th>
+        </tr>
+        <tr th:each="username,iter : ${users}">
+            <td th:text="${username}"></td>
+        </tr>
+
+    </table>
+    <p class="lead">Context Beannames</p>
+    <table class="table table-striped scrollable-table">
+        <tr>
+            <th>Beannames</th>
+        </tr>
+        <tr th:each="beanname,iter : ${beans}">
+            <td th:text="${beanname}"></td>
+        </tr>
+
+    </table>
 </div>
 
 <div th:include="layout :: footer">(footer)</div>

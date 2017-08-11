@@ -1,6 +1,8 @@
 package de.kania.pocketcloud.controller;
 
 import de.kania.pocketcloud.jsonentity.Song;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Controller
 public class MusicController {
+
+    private static final Log LOGGER = LogFactory.getLog(MusicController.class);
     Set<Song> musicSet = new HashSet<>();
 
     @RequestMapping("/music")
@@ -33,7 +37,7 @@ public class MusicController {
         }
         Arrays.stream(songs).filter(song -> !song.getTitle().equalsIgnoreCase("Verbraucherinformation")).forEach(song -> {
             musicSet.add(song);
-            System.out.println(song);
+            LOGGER.info(song);
         });
     }
 }
